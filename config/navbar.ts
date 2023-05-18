@@ -1,22 +1,14 @@
 export const navItems = [
     {
-        name: 'Consulting',
-        href: '/consulting',
+        name: 'Projects',
+        href: '/projects',
     },
     {
-        name: 'Solutions',
-        href: '/solutions',
+        name: 'Feed',
+        href: '/feed',
     },
     {
-        name: 'Products',
-        href: '/products',
-    },
-    {
-        name: "Open Source",
+        name: 'Open Source',
         href: '/open-source',
-    },
-    {
-        name: "Philanthropy",
-        href: '/philanthropy',
     }
 ];

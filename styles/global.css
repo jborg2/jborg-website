@@ -91,3 +91,12 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+.border-gradient::before {
+  background: radial-gradient(
+    150px circle at var(--x) var(--y),
+    #1cd1c6 0,
+    #407cff 50%,
+    transparent 100%
+  );
+}

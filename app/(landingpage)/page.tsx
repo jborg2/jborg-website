@@ -7,6 +7,7 @@ import MobileNavBar from "@/components/mobile-navbar";
 import Contact from "@/components/contact";
 
 import { cn } from "@/lib/utils";
+import { StudioCard } from "@/components/ui/studiocard";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         <MobileNavBar />
       </div>
       <Hero />
-      <div className='hidden sm:block w-max'>
+      <div className='hidden sm:flex items-center justify-center w-full'>
         <NavBar />
       </div>
       <div className={cn(
@@ -25,8 +26,7 @@ export default function Home() {
         "min-h-screen",
         "flex flex-col justify-center items-center",
       )}>
-        {/* <Services /> */}
-      </div >
+      </div>
     </>
   );
 }
