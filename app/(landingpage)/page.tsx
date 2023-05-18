@@ -7,7 +7,8 @@ import MobileNavBar from "@/components/mobile-navbar";
 import Contact from "@/components/contact";
 
 import { cn } from "@/lib/utils";
-import Projects from "@/components/projects";
+import { Posts } from "@/components/posts";
+import { allPosts, Post } from 'contentlayer/generated'
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
         "min-h-screen",
         "flex flex-col justify-center items-center",
       )}>
-        <Projects />
+        <Posts posts={allPosts as Post[]}/>
       </div>
     </>
   );
