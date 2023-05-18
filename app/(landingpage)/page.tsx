@@ -7,7 +7,7 @@ import MobileNavBar from "@/components/mobile-navbar";
 import Contact from "@/components/contact";
 
 import { cn } from "@/lib/utils";
-import { StudioCard } from "@/components/ui/studiocard";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -26,6 +26,7 @@ export default function Home() {
         "min-h-screen",
         "flex flex-col justify-center items-center",
       )}>
+        <Projects />
       </div>
     </>
   );
