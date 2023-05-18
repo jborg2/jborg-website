@@ -3,9 +3,6 @@ import React from "react";
 import Particles from "@/components/particles";
 import { cn } from "@/lib/utils"
 import { navItems } from '@/config/navbar'
-import { Separator } from "./shadcn-ui/separator";
-import { siteConfig } from "@/config/site";
-import ContactButton from "./ui/contactbutton";
 
 const navigation = [
     { name: "About", href: "/about" },
@@ -73,31 +70,27 @@ export default function Hero() {
             )} />
             <Particles
                 className="absolute inset-0 -z-10 animate-fade-in"
-                quantity={100}
+                quantity={200}
             />
             <h1 className={cn(
                 "z-10",
-                "text-4xl text-transparent duration-1000",
+                "text-7xl text-transparent duration-1000",
                 "bg-black dark:bg-white",
                 "cursor-default animate-title",
-                "font-display sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl-text-9xl",
+                "font-display sm:text-5xl md:text-7xl lg:text-8xl xl:text-8xl 2xl-text-9xl",
                 "whitespace-nowrap bg-clip-text",
                 "tracking-wide"
                 // "text-edge-outline"
             )}
             >
-                {/* <span className='bg-gradient-to-tr from-zinc-200 via-neutral-300 to-gray-500 bg-clip-text text-edge-outline'>jborg</span>{' '} */}
-                <span className='text-edge-outline'>Everman - Haygood</span>
+                {/* <span className='bg-gradient-to-tr from-red-800 via-blue-500 to-gray-500 bg-clip-text text-edge-outline'>jborg</span>{' '} */}
+                <span className='text-edge-outline'>jborg2</span>
             </h1>
-            {/* <h2 className="text:lg sm:text-xl md:text-2xl text-display text-foreground dark:text-foreground animate-fade-in">
-                    Consulting & Solutions
-            </h2> */}
             <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
             <div className="text-center animate-fade-in">
-                {/* <h2 className="text-base text-zinc-500">
-                    We build pragmatic tech.
-                </h2> */}
-                <ContactButton />
+                <h2 className="text-base text-zinc-500">
+                    jake + ben + organization + 2
+                </h2>
             </div>
         </div>
     );
