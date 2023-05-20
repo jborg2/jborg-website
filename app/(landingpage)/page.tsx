@@ -25,9 +25,12 @@ export default function Home() {
         "from-transparent via-zinc-100/50 to-zinc-100",
         "dark:from-transparent dark:via-neutral-800/50 dark:to-neutral-800",
         "min-h-screen",
-        "flex flex-col justify-center items-center",
+        "flex flex-col",
+        "pt-24",
       )}>
-        <Posts posts={allPosts as Post[]}/>
+        <div className='mx-auto max-w-2xl w-full'>
+          <Posts posts={allPosts as Post[]} />
+        </div>
       </div>
     </>
   );

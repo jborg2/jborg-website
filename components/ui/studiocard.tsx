@@ -15,7 +15,7 @@ export const StudioCard = ({ children, className }: { children: React.ReactNode,
             className={cn(
                 'border-gradient group relative h-full rounded-xl',
                 // 'bg-gray-700',
-                'p-8 before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl lg:p-16',
+                'p-4 before:absolute before:-inset-px before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:rounded-xl lg:p-8',
                 className
             )}
         >
