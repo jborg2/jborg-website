@@ -21,7 +21,7 @@ export function Posts({ posts }: { posts: Post[] }) {
         >
             <h1 className="mb-8 text-center text-5xl font-bold">Ship Feed</h1>
             {posts.map((post, idx) => (
-                <Link href={post.url} key={idx} className='flex flex-col w-full h-full'>
+                <Link href={post._raw.flattenedPath} key={idx} className='flex flex-col w-full h-full'>
                     <StudioCard key={idx}>
                         <div className="">
                             {/* <h2 className="mb-1 text-2xl font-medium">
