@@ -14,3 +14,22 @@ export const calculateOpacity = (scrollYPercent: number) => {
     const opacity = Math.min(easedPercentY, 1);
     return opacity;
 };
+
+export function getRandomColor500(): string  {
+    const tailwindColors500 : { [key: string]: string } = {
+        gray: '#9CA3AF',
+        red: '#EF4444',
+        yellow: '#F59E0B',
+        green: '#10B981',
+        blue: '#3B82F6',
+        indigo: '#6366F1',
+        purple: '#8B5CF6',
+        pink: '#EC4899',
+    };
+
+    const colorKeys = Object.keys(tailwindColors500);
+    const randomIndex = Math.floor(Math.random() * colorKeys.length);
+    const randomColor = tailwindColors500[colorKeys[randomIndex]];
+
+    return randomColor;
+}

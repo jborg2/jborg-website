@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useMousePosition } from "@/lib/hooks/use-mouse-position";
 import { useTheme } from "next-themes"
+import { getRandomColor500 } from "@/lib/utils";
 
 interface ParticlesProps {
 	className?: string;
@@ -136,7 +137,7 @@ export default function Particles({
 			context.current.beginPath();
 			context.current.arc(x, y, size, 0, 2 * Math.PI);
 
-			// // context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+			// context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
 			if (theme === "dark") {
 				context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
 			} else if (theme === "light") {
@@ -144,9 +145,8 @@ export default function Particles({
 			} else {
 				context.current.fillStyle = `rgba(255, 255, 255, ${alpha})`;
 			}
-			// context.current.fillStyle = `rgba(201, 242, 155, ${alpha})`;
+			// context.current.fillStyle = getRandomColor500();
 			
-
 			context.current.fill();
 			context.current.setTransform(dpr, 0, 0, dpr, 0, 0);
 
