@@ -33,3 +33,7 @@ export function getRandomColor500(): string  {
 
     return randomColor;
 }
+
+export function getRandomInt(range: number): number {
+    return Math.floor(Math.random() * (range + 1));
+}

@@ -34,7 +34,9 @@ export default function NavBar(props: any) {
                 className={cn(
                     'px-4 py-1 flex flex-row justify-center items-center w-full',
                     'border-[1px] rounded-full border-zinc-500 dark:border-zinc-700',
-                    'bg-transparent dark:bg-transparent backdrop-filter backdrop-blur-lg',
+                    // 'bg-transparent dark:bg-transparent',
+                    'bg-white dark:bg-zinc-800',
+                    // 'backdrop-filter backdrop-blur-xl',
                 )}>
                 <ul
                     className='flex flex-row items-center justify-center w-full gap-4'

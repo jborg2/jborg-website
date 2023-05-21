@@ -92,11 +92,31 @@
   }
 }
 
-.border-gradient::before {
+.border-gradient-1::before {
   background: radial-gradient(
-    150px circle at var(--x) var(--y),
+    200px circle at var(--x) var(--y),
     #1cd1c6 0,
     #407cff 50%,
+    transparent 100%
+  );
+  transition-duration: 1s;
+}
+
+.border-gradient-2::before {
+  background: radial-gradient(
+    200px circle at var(--x) var(--y),
+    #d1581c 0,
+    #fff940 50%,
+    transparent 100%
+  );
+  transition-duration: 1s;
+}
+
+.border-gradient-3::before {
+  background: radial-gradient(
+    200px circle at var(--x) var(--y),
+    #1cd149 0,
+    #40fffc 50%,
     transparent 100%
   );
   transition-duration: 1s;

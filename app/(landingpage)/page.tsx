@@ -7,6 +7,8 @@ import MobileNavBar from "@/components/mobile-navbar";
 import { cn } from "@/lib/utils";
 import { Posts } from "@/components/posts";
 import { allPosts, Post } from 'contentlayer/generated'
+import Showcase from "@/components/showcase"
+import Particles from "@/components/particles"
 
 export default function Home() {
   return (
@@ -26,8 +28,9 @@ export default function Home() {
         "flex flex-col",
         "pt-24",
       )}>
-        <div className='mx-auto max-w-2xl w-full'>
-          <Posts posts={allPosts as Post[]} />
+        <div className='mx-auto w-full'>
+          {/* <Posts posts={allPosts as Post[]} /> */}
+          <Showcase />
         </div>
       </div>
     </>
