@@ -5,27 +5,6 @@ import rehypeAutolinkHeadings from "@justfork/rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 
-const computedFieldsObj = {
-    url: {
-        type: "string",
-        resolve: (doc: any) => `/${doc._raw.flattenedPath}`,
-    },
-    slugAsParams: {
-        type: "string",
-        resolve: (doc: any) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-    },
-}
-
-// const computedFieldsObj = {
-//         //! this turns flattendPath /posts/post-name to /post-name to match the slug with post in /posts/[...slug]
-//         url: { type: "string", resolve: (post : any) => post._raw.flattenedPath.split("/").slice(1).join("/") },
-
-//         // TODO fix the slug and url param names. right now the slug is being mapped to url and its messing up the link to page
-//         // slug: { type: 'string', resolve: (post : any) => post._raw.flattenedPath.split("/").slice(1).join("/") },
-//         // url : { type: 'string', resolve: (post:any) => post._raw.flattenedPath }
-// }
-
-
 export const Post = defineDocumentType(() => ({
     name: 'Post',
     filePathPattern: `posts/**/*.mdx`,
@@ -33,11 +12,12 @@ export const Post = defineDocumentType(() => ({
     fields: {
         title: { type: 'string', required: true },
         date: { type: 'date', required: true },
+        tags: { type: 'string', required: false }
     },
     computedFields: {
         url: {
             type: "string",
-            resolve: (doc: any) => `/${doc._raw.flattenedPath}`,
+            resolve: (doc: any) => `/blog/${doc._raw.flattenedPath.split("/").slice(1).join("/")}`,
         },
         slugAsParams: {
             type: "string",
@@ -57,7 +37,7 @@ export const Project = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: "string",
-            resolve: (doc: any) => `/${doc._raw.flattenedPath}`,
+            resolve: (doc: any) => `/projects/${doc._raw.flattenedPath.split("/").slice(1).join("/")}`,
         },
         slugAsParams: {
             type: "string",

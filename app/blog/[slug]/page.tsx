@@ -7,8 +7,6 @@ import { Mdx } from '@/components/mdx-components'
 import { Icons } from '@/components/icons'
 import { buttonVariants } from '@/components/shadcn-ui/button'
 
-import "@/styles/mdx.css"
-
 
 export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post._raw.flattenedPath }))
 

@@ -99,4 +99,5 @@
     #407cff 50%,
     transparent 100%
   );
+  transition-duration: 1s;
 }
