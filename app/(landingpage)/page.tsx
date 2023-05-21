@@ -2,9 +2,7 @@
 
 import Hero from "@/components/hero";
 import NavBar from "@/components/navbar";
-import Services from "@/components/services";
 import MobileNavBar from "@/components/mobile-navbar";
-import Contact from "@/components/contact";
 
 import { cn } from "@/lib/utils";
 import { Posts } from "@/components/posts";
