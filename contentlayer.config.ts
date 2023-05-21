@@ -1,7 +1,9 @@
 import { defineDocumentType, makeSource } from '@contentlayer/source-files'
 import highlight from 'rehype-highlight'
 import remarkGfm from 'remark-gfm'
-import Projects from './components/projects'
+import rehypeAutolinkHeadings from "@justfork/rehype-autolink-headings"
+import rehypePrettyCode from "rehype-pretty-code"
+import rehypeSlug from "rehype-slug"
 
 const computedFieldsObj = {
     url: {
@@ -64,4 +66,43 @@ export const Project = defineDocumentType(() => ({
     }
 }))
 
-export default makeSource({ contentDirPath: './content', documentTypes: [Post, Project] })
+export default makeSource({
+    contentDirPath: './content',
+    documentTypes: [Post, Project],
+    mdx: {
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [
+            rehypeSlug,
+            [
+                rehypePrettyCode,
+                {
+                    theme: "github-dark",
+                    // TODO Figure out node type
+                    onVisitLine(node : any) {
+                        // Prevent lines from collapsing in `display: grid` mode, and allow empty
+                        // lines to be copy/pasted
+                        if (node.children.length === 0) {
+                            node.children = [{ type: "text", value: " " }]
+                        }
+                    },
+                    onVisitHighlightedLine(node :any ) {
+                        node.properties.className.push("line--highlighted")
+                    },
+                    onVisitHighlightedWord(node :any ) {
+                        node.properties.className = ["word--highlighted"]
+                    },
+                },
+            ],
+            [
+                rehypeAutolinkHeadings,
+                {
+                    properties: {
+                        className: ["subheading-anchor"],
+                        ariaLabel: "Link to section",
+                    },
+                },
+            ],
+        ],
+    },
+
+})
