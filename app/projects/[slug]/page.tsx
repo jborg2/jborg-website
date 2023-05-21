@@ -13,7 +13,9 @@ export async function generateStaticParams() {
 export default async function Page({ params }: { params: { slug: string } }) {
     // Find the project for the current page.
     // this is matching the "computed fields"
-    const project = allProjects.find((project: Project) => project.url === params.slug)
+    // ! if i log this object i see the computed fields (slugAsParams) but it still throws a type error because of the weird syntax I had to use in the .contentlayer.config file
+    console.log(allProjects)
+    const project = allProjects.find((project: Project) => project.slugAsParams === params.slug)
 
     // 404 if the project does not exist.
     if (!project) notFound()

@@ -11,7 +11,7 @@ const components = {
     h1: ({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
         <h1
             className={cn(
-                "mt-2 scroll-m-20 text-4xl font-bold tracking-tight",
+                "mt-2 scroll-m-20 text-4xl font-bold text-red-500 tracking-tight",
                 className
             )}
             {...props}
