@@ -12,15 +12,17 @@ export const generateStaticParams = async () => allPosts.map((post) => ({ slug: 
 
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
     // console.log("all posts", allPosts)
-    const post = allPosts.find((post) => post.slugAsParams.replace("/", "%2F") === (params.slug))
-    if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
+    const decodedSlug = decodeURIComponent(params.slug)
+    const post = allPosts.find((post) => post.slugAsParams === (decodedSlug))
+    if (!post) throw new Error(`Post not found for slug: ${decodedSlug}`)
     return { title: post.title }
 }
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
     // const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
-    const post = allPosts.find((post) => post.slugAsParams.replace("/", "%2F") === (params.slug))
-    if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
+    const decodedSlug = decodeURIComponent(params.slug)
+    const post = allPosts.find((post) => post.slugAsParams === (decodedSlug))
+    if (!post) throw new Error(`Post not found for slug: ${decodedSlug}`)
 
     return (
         <article className="container relative max-w-3xl py-6 lg:py-10">
