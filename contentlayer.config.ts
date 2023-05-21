@@ -24,7 +24,10 @@ export const Post = defineDocumentType(() => ({
     computedFields: {
         //! this turns flattendPath /posts/post-name to /post-name to match the slug with post in /posts/[...slug]
         url: { type: 'string', resolve: (post : any) => post._raw.flattenedPath.split("/").slice(1).join("/") },
-        slug : { type: 'string', resolve: (post:any) => post._raw.flattenedPath }
+
+        // TODO fix the slug and url param names. right now the slug is being mapped to url and its messing up the link to page
+        // slug: { type: 'string', resolve: (post : any) => post._raw.flattenedPath.split("/").slice(1).join("/") },
+        // url : { type: 'string', resolve: (post:any) => post._raw.flattenedPath }
     },
 }))
 
