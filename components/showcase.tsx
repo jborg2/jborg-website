@@ -66,6 +66,7 @@ export const ShowcaseGrid = () => {
                             "flex flex-col",
                             "w-full",
                             'px-8 py-4',
+                            // 'hover:shadow-sm dark:hover:shadow-none',
                             item.level === 1 ? "min-h-[250px]" : item.level == 2 ? `min-h-[100px]` : `min-h-[0px]`,
                         )}
                         onHoverOnly={true}
