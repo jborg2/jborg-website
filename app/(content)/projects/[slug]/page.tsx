@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     {project.title}
                 </h1>
                 <p>
-                    {project?.description}
+                    {project?.desc}
                 </p>
             </div>
             <hr className="mb-12 mt-4" />

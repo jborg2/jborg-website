@@ -47,7 +47,7 @@ export default async function BlogPage() {
                 />
               )} */}
               <h2 className="text-xl font-semibold">{post.title}</h2>
-              {post?.description && (
+              {post?.desc && (
                 <p className="text-slate-600 dark:text-slate-400">{post?.description}</p>
               )}
               {post.date && (
