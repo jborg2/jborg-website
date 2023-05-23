@@ -1,48 +1,74 @@
+'use client'
+
 import { cn, getRandomInt } from "@/lib/utils"
 import useScrollY from "@/lib/hooks/use-scrollY"
 import UserStory from "@/components/user-story";
 import { calculateOpacity } from "@/lib/utils";
 import { StudioCard } from "./ui/studiocard";
+import { Icons } from "./icons";
+import Link from 'next/link'
+import { Badge, badgeColors, badgeTextColors } from '@/components/ui/badge'
+import ExternalLink from "./ui/ExternalLink";
+import { SmartLink } from "./smartlink";
+
+type gridItem = {
+    level: 1 | 2 | 3,
+    type?: "repo" | "blog",
+    title: string,
+    desc: string,
+    url: string | URL
+    badges?: Array<string>
+}
+
+type gridItems = gridItem[]
 
 const gridItems = [
     {
         level: 1,
+        type: "repo",
         title: "Semantics Cloud",
         desc: "this is a desc random words lorem inoi adljkfh alsdkfj aklj fhkiu hfa lkjah flakjsh alkfsjh alkjdflkadjs",
-        url: ""
+        url: "https://github.com/jborg2/jborg-website-v2",
+        badges: ["open source", "code", "AI"]
     },
     {
         level: 1,
+        type: "repo",
         title: "Auto Architecture",
         desc: "this is a desc that is way shorter yes",
         url: ""
     },
     {
         level: 1,
+        type: "repo",
         title: "AutoDoc",
         desc: "this is a desc",
         url: ""
     },
     {
         level: 2,
+        type: "blog",
         title: "Update 5/21",
         desc: "this is a desc",
         url: ""
     },
     {
         level: 2,
+        type: "blog",
         title: "Update 5/19",
         desc: "this is a desc",
         url: ""
     },
     {
         level: 2,
+        type: "blog",
         title: "Update 5/14",
         desc: "this is a desc",
         url: ""
     },
     {
         level: 3,
+        type: "blog",
         title: "Some random thing",
         desc: "this is a desc",
         url: ""
@@ -58,29 +84,35 @@ export const ShowcaseGrid = () => {
         >
             {gridItems.map((item, i) => {
                 return (
-                    <StudioCard
-                        key={i}
-                        gradient={i % 3 + 1}
-                        // gradient = {1}
-                        className={cn(
-                            "flex flex-col",
-                            "w-full",
-                            'px-8 py-8 lg:py-6',
-                            // 'hover:shadow-sm dark:hover:shadow-none',
-                            item.level === 1 ? "min-h-[250px]" : item.level == 2 ? `min-h-[100px]` : `min-h-[0px]`,
-                        )}
-                        onHoverOnly={true}
-                    >
-                        <h3 className={cn(
-                            item.level === 1 ? "font-semibold text-2xl" : item.level == 2 ? "font-semibold text-xl" : "font-medium text-xl",
-                            "mb-2"
-                        )}>
-                            {item.title}
-                        </h3>
-                        <p className='text-zinc-600 dark:text-zinc-400'>
-                            {item.desc}
-                        </p>
-                    </StudioCard>
+                    <SmartLink key={i} href={item.url}>
+                        <StudioCard
+                            key={i}
+                            gradient={i % 3 + 1}
+                            // gradient = {1}
+                            className={cn(
+                                "flex flex-col justify-between",
+                                "w-full h-full",
+                                'px-8 py-8 lg:py-6',
+                                // 'hover:shadow-sm dark:hover:shadow-none',
+                                item.level === 1 ? "min-h-[250px]" : item.level == 2 ? `min-h-[100px]` : `min-h-[0px]`,
+                            )}
+                            onHoverOnly={true}
+                        >
+                            <h3 className={cn(
+                                item.level === 1 ? "font-semibold text-2xl" : item.level == 2 ? "font-semibold text-xl" : "font-medium text-xl",
+                                "mb-2",
+                                "flex flex-row items-center"
+                            )}>
+                                {item.title}
+                                {item.type === 'repo' && <Icons.gitHub
+                                    className='h-6 w-6 ml-3'
+                                />}
+                            </h3>
+                            <p className='text-zinc-600 dark:text-zinc-400'>
+                                {item.desc}
+                            </p>
+                        </StudioCard>
+                    </SmartLink>
                 );
             })}
         </div>

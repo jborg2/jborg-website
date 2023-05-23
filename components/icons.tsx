@@ -19,6 +19,7 @@ import {
   Pizza,
   Plus,
   Settings,
+  Star,
   Trash,
   Twitter,
   User,
@@ -67,4 +68,5 @@ export const Icons = {
   twitter: Twitter,
   check: Check,
   mail : Mail,
+  star : Star,
 }

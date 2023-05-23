@@ -5,7 +5,7 @@ import { useMouseInElementOnHover } from '@/lib/hooks/use-mouse-in-element-on-ho
 
 export const StudioCard = (
     { children, className, gradient = 0, onHoverOnly = false }:
-    { children: React.ReactNode, className?: string, gradient?: number | boolean, onHoverOnly?: boolean }
+        { children: React.ReactNode, className?: string, gradient?: number | boolean, onHoverOnly?: boolean }
 ) => {
     // const { elementRef, elementX, elementY } = useMouseInElement();
     const { elementRef, elementX, elementY, isActive } = useMouseInElementOnHover()
@@ -37,7 +37,9 @@ export const StudioCard = (
                     // "group-hover:bg-neutral-100 dark:group-hover:bg-[#27272a]",
                 )}
             ></div>
-            <div className="relative z-10">{children}</div>
+            <div className={cn(
+                "relative z-10 h-full"
+            )}>{children}</div>
         </div>
     );
 };

@@ -1,16 +1,24 @@
-'use client'
-
 import Hero from "@/components/hero";
 import NavBar from "@/components/navbar";
 import MobileNavBar from "@/components/mobile-navbar";
 
 import { cn } from "@/lib/utils";
-import { Posts } from "@/components/posts";
-import { allPosts, Post } from 'contentlayer/generated'
 import Showcase from "@/components/showcase"
-import Particles from "@/components/particles"
+import { getRepo } from "@/lib/github";
 
-export default function Home() {
+const getRepos = async () => {
+  const urls: URL[] = [
+    new URL('https://api.github.com/repos/jborg2/jborg-website-v2'),
+  ]
+  const reposData = await Promise.all(urls.map((url: URL): Promise<any> => getRepo(url)))
+  return reposData
+}
+
+export default async function Home() {
+
+  const gitHubData = await getRepos()
+  console.log(gitHubData)
+
   return (
     <>
       <div className='block sm:hidden sticky top-0'>
