@@ -19,7 +19,10 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
     // const post = allPosts.find((post) => post._raw.flattenedPath === params.slug)
-    const post = allPosts.find((post) => post.slugAsParams === (params.slug))
+    const post = allPosts
+        .filter((post) => post.published === true)
+        .find((post) => post.slugAsParams === (params.slug))
+        
     if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
 
     return (
@@ -43,7 +46,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
                         Published on {format(parseISO(post.date), 'LLLL d, yyyy')}
                     </time>
                 )}
-                <h1 className="mt-2 inline-block font-bold text-4xl leading-tight lg:text-5xl">
+                <h1 className="mt-2 mb-4 inline-block font-bold text-4xl leading-tight lg:text-5xl">
                     {post.title}
                 </h1>
             </div>

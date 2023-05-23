@@ -23,6 +23,7 @@ const generatedProjectNavItems = allProjects
     })
 
 const generatedBlogNavItems = allPosts
+    .filter((post) => post.published)
     .filter((post: Post) => post.slugAsParams).map((post) => {
         return {
             type: "blog",
@@ -82,7 +83,7 @@ export const ShowcaseGrid = () => {
                                                 className='h-6 w-6 ml-3'
                                             />}
                                         </h3>
-                                        <p className='text-zinc-600 dark:text-zinc-400'>
+                                        <p className='text-zinc-600 dark:text-zinc-400 mb-2'>
                                             {item.desc}
                                         </p>
                                     </div>
