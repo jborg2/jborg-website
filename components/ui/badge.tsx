@@ -27,7 +27,7 @@ export function Badge({ children, ...props }: any) {
     return (
         <p
             {...props}
-            className={cn('px-2 py-1 transition-all rounded-lg text-white font-medium translate-y-[.2rem]',
+            className={cn('px-2 py-1 transition-all rounded-lg text-white font-medium translate-y-[0rem] flex flex-row items-center justify-center',
                 props.className,
                 badgeColors[props.color], badgeTextColors[props.color]
             )}

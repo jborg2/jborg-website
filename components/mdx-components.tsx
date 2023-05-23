@@ -6,6 +6,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { cn } from "@/lib/utils";
 import { Callout } from "@/components/ui/callout";
 import { MdxCard } from "@/components/mdx-card";
+import RepoCard from "@/components/repocard";
 
 const components = {
     h1: ({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
@@ -153,6 +154,7 @@ const components = {
     Image,
     Callout,
     Card: MdxCard,
+    RepoCard: RepoCard
 };
 
 interface MdxProps {

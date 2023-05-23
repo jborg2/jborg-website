@@ -10,6 +10,7 @@ import {
   File,
   FileText,
   Github,
+  GitFork,
   HelpCircle,
   Image,
   Loader2,
@@ -69,4 +70,5 @@ export const Icons = {
   check: Check,
   mail : Mail,
   star : Star,
+  gitFork : GitFork,
 }

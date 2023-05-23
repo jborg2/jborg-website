@@ -4,13 +4,6 @@ import Particles from "@/components/particles";
 import { cn } from "@/lib/utils"
 import { navItems } from '@/config/navbar'
 
-const navigation = [
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
-];
-
 function NavItems({ start, end, className }: any) {
     return (
         <>

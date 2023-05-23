@@ -33,7 +33,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     {project?.desc}
                 </p>
             </div>
-            <hr className="mb-12 mt-4" />
+            <hr className="mb-4 mt-4" />
             <article>
                 <Mdx code={project.body.code} />
             </article>
