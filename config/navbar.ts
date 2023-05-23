@@ -1,11 +1,15 @@
 export const navItems = [
+    { 
+        name: 'Home',
+        href: '/'
+    },
     {
         name: 'Projects',
         href: '/projects',
     },
     {
         name: 'Feed',
-        href: '/feed',
+        href: '/blog',
     },
     {
         name: 'Open Source',

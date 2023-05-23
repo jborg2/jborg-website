@@ -15,8 +15,8 @@ export const calculateOpacity = (scrollYPercent: number) => {
     return opacity;
 };
 
-export function getRandomColor500(): string  {
-    const tailwindColors500 : { [key: string]: string } = {
+export function getRandomColor500(): string {
+    const tailwindColors500: { [key: string]: string } = {
         gray: '#9CA3AF',
         red: '#EF4444',
         yellow: '#F59E0B',
@@ -36,4 +36,13 @@ export function getRandomColor500(): string  {
 
 export function getRandomInt(range: number): number {
     return Math.floor(Math.random() * (range + 1));
+}
+
+export function formatDate(input: string | number): string {
+    const date = new Date(input)
+    return date.toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+    })
 }
