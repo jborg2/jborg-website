@@ -14,7 +14,7 @@ export default function Layout({
             "from-zinc-100 via-zinc-600/10 to-zinc-100",
             "dark:from-zinc-900 dark:via-zinc-400/10 dark:to-zinc-900",
         )}>
-            <div className="fixed bottom-0 right-0 mb-4 mr-4">
+            <div className="fixed bottom-0 right-0 mb-4 mr-4 z-50">
                 <Toggle />
             </div>
             <main className={cn(
@@ -26,10 +26,10 @@ export default function Layout({
                 <div
                     className='max-w-3xl w-full mx-auto'
                 >
-                    {/* <div className='block sm:hidden sticky top-0'>
+                    <div className='block sticky sm:hidden top-0 z-50'>
                         <MobileNavBar />
-                    </div> */}
-                    <div className='hidden relative sm:block w-max'>
+                    </div>
+                    <div className='hidden relative sm:block w-max z-50'>
                         <NavBar />
                     </div>
                     {children}
