@@ -8,7 +8,7 @@ export const navItems = [
         href: '/projects',
     },
     {
-        name: 'Feed',
+        name: 'Blog',
         href: '/blog',
     },
     {

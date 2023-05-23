@@ -4,6 +4,8 @@ import { cn } from '@/lib/utils'
 import MobileNavBar from "@/components/mobile-navbar";
 import { DocsSidebarNav } from '@/components/sidebar-nav';
 import { docsConfig } from "@/config/docs"
+import { allProjects } from '@/.contentlayer/generated';
+import { SidebarNavItem } from '@/components/sidebar-nav';
 
 export default function Layout({
     children,
@@ -11,7 +13,30 @@ export default function Layout({
     children: React.ReactNode;
 }) {
 
-    const generatedSidebarItems : Array<any> = []
+    const generatedProjectNavItems: SidebarNavItem[] = allProjects
+        .filter((project) => project.slugAsParams).map((project) => {
+
+            return {
+                title: project.title,
+                href: `/projects/${project.slugAsParams}`,
+            }
+        })
+
+    const generatedSidebarItems = [
+        {
+            title: "Overview",
+            items: [
+                {
+                    title: "Introduction",
+                    href: "/projects",
+                },
+            ],
+        },
+        {
+            title: "Projects",
+            items: generatedProjectNavItems,
+        }
+    ]
 
     return (
         <div className={cn(
@@ -37,10 +62,10 @@ export default function Layout({
                 </div>
                 <div className='container w-full'>
                     <div className="flex-1 md:grid md:grid-cols-[220px_1fr] md:gap-6 lg:grid-cols-[240px_1fr] lg:gap-10">
-                        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto border-r border-color py-6 pr-2 md:sticky md:block lg:py-10">
+                        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-4rem)] w-full shrink-0 overflow-y-auto border-r border-color py-6 pr-2 md:sticky md:block lg:py-10">
                             <DocsSidebarNav items={generatedSidebarItems} />
                         </aside>
-                        <div className='py-6 lg:py-10'>
+                        <div className='py-6 lg:py-10 max-w-3xl'>
                             {children}
                         </div>
                     </div>
