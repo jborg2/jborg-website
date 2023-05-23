@@ -2,6 +2,8 @@ import { Toggle } from '@/components/darkmodetoggle';
 import NavBar from '@/components/navbar-2';
 import { cn } from '@/lib/utils'
 import MobileNavBar from "@/components/mobile-navbar";
+import { DocsSidebarNav } from '@/components/sidebar-nav';
+import { docsConfig } from "@/config/docs"
 
 export default function Layout({
     children,
@@ -23,18 +25,16 @@ export default function Layout({
                 "min-h-screen",
                 "w-screen",
             )}>
-                <div
-                    className='max-w-3xl w-full mx-auto'
-                >
+                <div className='mx-auto max-w-3xl'>
                     <div className='block sticky sm:hidden top-0 z-50'>
                         <MobileNavBar />
                     </div>
-                    <div className='hidden relative sm:block w-max z-50'>
+                    <div className='hidden relative sm:block w-full z-50'>
                         <NavBar />
                     </div>
                     {children}
                 </div>
-            </main>
-        </div>
+            </main >
+        </div >
     );
 }
