@@ -57,12 +57,12 @@ export default function Layout({
                 <div className='block sticky sm:hidden top-0 z-50'>
                     <MobileNavBar />
                 </div>
-                <div className='hidden relative sm:block w-full z-50 border-b'>
+                <div className='hidden relative sm:block w-full z-50 border-b border-zinc-200 dark:border-zinc-700'>
                     <NavBar />
                 </div>
                 <div className='container w-full'>
                     <div className="flex-1 md:grid md:grid-cols-[220px_1fr] md:gap-6 lg:grid-cols-[240px_1fr] lg:gap-10">
-                        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-4rem)] w-full shrink-0 overflow-y-auto border-r border-color py-6 pr-2 md:sticky md:block lg:py-10">
+                        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-4rem)] w-full shrink-0 overflow-y-auto border-r border-zinc-200 dark:border-zinc-700 py-6 pr-2 md:sticky md:block lg:py-10">
                             <DocsSidebarNav items={generatedSidebarItems} />
                         </aside>
                         <div className='py-6 lg:py-10 max-w-3xl'>

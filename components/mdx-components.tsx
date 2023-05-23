@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Callout } from "@/components/ui/callout";
 import { MdxCard } from "@/components/mdx-card";
 import RepoCard from "@/components/repocard";
+import ExternalLink from "./ExternalLink";
 
 const components = {
     h1: ({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
@@ -21,7 +22,7 @@ const components = {
     h2: ({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
         <h2
             className={cn(
-                "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+                "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0 border-zinc-200 dark:border-zinc-700",
                 className
             )}
             {...props}
@@ -63,12 +64,13 @@ const components = {
             {...props}
         />
     ),
-    a: ({ className, ...props }: HTMLAttributes<HTMLAnchorElement>) => (
-        <a
-            className={cn("font-medium underline underline-offset-4", className)}
-            {...props}
-        />
-    ),
+    // a: ({ className, ...props }: HTMLAttributes<HTMLAnchorElement>) => (
+    //     <a
+    //         className={cn("font-medium underline underline-offset-4", className)}
+    //         {...props}
+    //     />
+    // ),
+    a: ExternalLink,
     p: ({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
         <p
             className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
@@ -102,7 +104,7 @@ const components = {
         <img className={cn("rounded-md border", className)} alt={alt} {...props} />
     ),
     hr: ({ ...props }: HTMLAttributes<HTMLHRElement>) => (
-        <hr className="my-4 md:my-8" {...props} />
+        <hr className="my-4 md:my-8 border-zinc-200 dark:border-zinc-700" {...props} />
     ),
     table: ({ className, ...props }: TableHTMLAttributes<HTMLTableElement>) => (
         <div className="my-6 w-full overflow-y-auto">

@@ -90,6 +90,10 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  hr {
+    @apply border-zinc-200 dark:border-zinc-700
+  }
 }
 
 .border-gradient-1::before {

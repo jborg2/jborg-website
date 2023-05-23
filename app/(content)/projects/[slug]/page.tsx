@@ -23,10 +23,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
                         dateTime={project.date}
                         className="block text-sm text-muted-foreground"
                     >
-                        Published on {format(parseISO(project.date), 'LLLL d, yyyy')}
+                        Last updated on {format(parseISO(project.date), 'LLLL d, yyyy')}
                     </time>
                 )}
-                <h1 className="mt-2 inline-block font-bold text-4xl leading-tight lg:text-5xl">
+                <h1 className="mt-2 mb-4 inline-block font-bold text-4xl leading-tight lg:text-5xl">
                     {project.title}
                 </h1>
                 <p>
