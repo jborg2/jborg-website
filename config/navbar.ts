@@ -3,6 +3,10 @@ export const navItems = [
         name: 'Home',
         href: '/'
     },
+    // {
+    //     name: 'About',
+    //     href: '/about',
+    // },
     {
         name: 'Projects',
         href: '/projects',
@@ -12,7 +16,7 @@ export const navItems = [
         href: '/blog',
     },
     {
-        name: 'Open Source',
-        href: '/open-source',
+        name: 'Contact',
+        href: '/contact',
     }
 ];

@@ -11,7 +11,7 @@ export const Post = defineDocumentType(() => ({
     contentType: 'mdx',
     fields: {
         title: { type: 'string', required: true },
-        description: { type: 'string', required: false},
+        desc: { type: 'string', required: false},
         date: { type: 'date', required: true },
         tags: { type: 'string', required: false },
         published: { type: "boolean", default: true},
@@ -34,7 +34,7 @@ export const Project = defineDocumentType(() => ({
     contentType: 'mdx',
     fields: {
         title: { type: 'string', required: true },
-        description: { type: 'string', required: false},
+        desc: { type: 'string', required: false},
         date: { type: 'date', required: true },
         tags: { type: 'string', required: false },
         published: { type: "boolean", default: true},

@@ -15,9 +15,8 @@ const getRepos = async () => {
 }
 
 export default async function Home() {
-
   const gitHubData = await getRepos()
-  console.log(gitHubData)
+  // console.log(gitHubData)
 
   return (
     <>
@@ -25,7 +24,9 @@ export default async function Home() {
         <MobileNavBar />
       </div>
       <Hero />
-      <div className='hidden sm:flex items-center justify-center w-full'>
+      <div
+        className='hidden sm:flex items-center justify-center w-full'        
+      >
         <NavBar />
       </div>
       <div className={cn(
@@ -36,7 +37,7 @@ export default async function Home() {
         "flex flex-col",
         "pt-24",
       )}>
-        <div className='mx-auto w-full'>
+        <div className='mx-auto w-full scroll-m-0'>
           {/* <Posts posts={allPosts as Post[]} /> */}
           <Showcase />
         </div>

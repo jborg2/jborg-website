@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function ease(x: number): number {
-    return x * x;
+    return x * x * x * x;
 }
 
 export const calculateOpacity = (scrollYPercent: number) => {
