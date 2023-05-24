@@ -23,6 +23,7 @@ export default function PopStateControl({ children }: { children: React.ReactNod
         };
     }, []);
 
+
     return (
         <>
             {children}
