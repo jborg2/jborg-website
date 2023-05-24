@@ -133,7 +133,7 @@ export default function Showcase() {
                 // "max-w-5xl"",
                 // "from-white via-zinc-400/20 to-white",
                 // "dark:from-black dark:via-zinc-600/20 dark:to-black",
-                "pt-36"
+                "pt-36 pb-24"
             )}>
                 <div className='flex flex-col items-center'>
                     <div className='flex w-full flex-col justify-center items-center'>
@@ -146,7 +146,7 @@ export default function Showcase() {
                             What is jborg2?
                         </h3>
                         <h2 className={cn(
-                            "text-4xl font-bold",
+                            "text-4xl font-bold text-center",
                             "text-zinc-800 dark:text-zinc-200",
                             "mb-16",
                         )}>

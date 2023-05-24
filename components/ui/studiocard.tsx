@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { useMouseInElement } from '@/lib/hooks/use-mouse-in-element';
-import { useMouseInElementOnHover } from '@/lib/hooks/use-mouse-in-element-on-hover';
+import { useMouseInElementOnInteract } from '@/lib/hooks/use-mouse-in-element-on-interact';
 
 export const StudioCard = (
     { children, className, gradient = 0, onHoverOnly = false }:
         { children: React.ReactNode, className?: string, gradient?: number | boolean, onHoverOnly?: boolean }
 ) => {
     // const { elementRef, elementX, elementY } = useMouseInElement();
-    const { elementRef, elementX, elementY, isActive } = useMouseInElementOnHover()
+    const { elementRef, elementX, elementY, isActive } = useMouseInElementOnInteract()
     const borderGradient = gradient !== 0 ? `border-gradient-${gradient}` : ''
 
     return (

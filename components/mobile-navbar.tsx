@@ -44,9 +44,7 @@ export default function MobileNavBar(props: any) {
                             <MenuIcon />
                         </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56 ml-2 mt-2 bg-background text-foreground dark:bg-background dark:text-foreground border-border dark:border-neutral-700">
-                        <DropdownMenuLabel>jborg2</DropdownMenuLabel>
-                        <DropdownMenuSeparator />
+                    <DropdownMenuContent className="w-screen h-screen animate-slide-right text-2xl mt-2 p-4 bg-background text-foreground dark:bg-background dark:text-foreground border-0 border-t-2 border-b-2 rounded-none border-border dark:border-neutral-700">
                         <DropdownMenuGroup>
                             {navItems.map((item, i) => (
                                 <Link
@@ -55,7 +53,7 @@ export default function MobileNavBar(props: any) {
                                     className='cursor-pointer'
                                 >
                                     <DropdownMenuItem
-                                        className='cursor-pointer'
+                                        className='cursor-pointer text-2xl font-medium'
                                     >
                                         <span>{item.name}</span>
                                     </DropdownMenuItem>

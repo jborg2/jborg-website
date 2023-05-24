@@ -24,7 +24,7 @@ export default async function BlogPage() {
             Blog
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-300">
-            Where I put my thoughts and ideas.
+            Learn more about what we&apos;re up to.
           </p>
         </div>
       </div>

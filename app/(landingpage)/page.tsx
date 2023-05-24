@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import Hero2 from "@/components/hero2";
 import NavBar from "@/components/navbar";
 import MobileNavBar from "@/components/mobile-navbar";
 
@@ -24,6 +25,7 @@ export default async function Home() {
         <MobileNavBar />
       </div>
       <Hero />
+      {/* <Hero2/> */}
       <div
         className='hidden sm:flex items-center justify-center w-full'        
       >
