@@ -14,7 +14,7 @@ export default function Contact() {
             <hr className="my-8 border-slate-200" />
             <div className="flex flex-col">
                 <p className="text-base text-slate-600 dark:text-slate-300">
-                    We are currently accepting new clients under our consulting firm, Everman - Haygood. Here are some of the services we offer:
+                    We are currently accepting new clients under our consulting firm, Everman - Haygood. Here are some examples of the problems we can help you solve:
                 </p>
             </div>
         </div>
