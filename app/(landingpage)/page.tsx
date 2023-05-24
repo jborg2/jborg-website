@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <>
-      <div className='block sm:hidden sticky top-0'>
+      <div className='block sm:hidden fixed top-0'>
         <MobileNavBar />
       </div>
       <Hero />

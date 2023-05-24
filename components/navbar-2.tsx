@@ -24,6 +24,7 @@ export default function NavBar(props: any) {
                                 href={item.href}
                                 className={cn(
                                     buttonVariants({ variant: "link" }),
+                                    "font-medium"
                                 )}
                             >
                                 <li>

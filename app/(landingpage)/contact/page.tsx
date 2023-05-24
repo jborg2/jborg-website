@@ -11,6 +11,12 @@ export default function Contact() {
                     </p>
                 </div>
             </div>
+            <hr className="my-8 border-slate-200" />
+            <div className="flex flex-col">
+                <p className="text-base text-slate-600 dark:text-slate-300">
+                    We are currently accepting new clients under our consulting firm, Everman - Haygood. Here are some of the services we offer:
+                </p>
+            </div>
         </div>
     )
 }
