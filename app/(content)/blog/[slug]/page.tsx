@@ -8,11 +8,16 @@ import { Icons } from '@/components/icons'
 import { buttonVariants } from '@/components/shadcn-ui/button'
 
 
-export const generateStaticParams = async () => allPosts.map((post) => ({ slug: post.slugAsParams }))
+export const generateStaticParams = async () => allPosts
+    .filter((post) => post.published === true)
+    .map((post) => ({ slug: post.slugAsParams }))
 
 export const generateMetadata = ({ params }: { params: { slug: string } }) => {
     // console.log("all posts", allPosts)
-    const post = allPosts.find((post) => post.slugAsParams === (params.slug))
+    const post = allPosts
+        .filter((post) => post.published === true)
+        .find((post) => post.slugAsParams === (params.slug))
+
     if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
     return { title: post.title }
 }
@@ -22,7 +27,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     const post = allPosts
         .filter((post) => post.published === true)
         .find((post) => post.slugAsParams === (params.slug))
-        
+
     if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
 
     return (
@@ -50,7 +55,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
                     {post.title}
                 </h1>
             </div>
-            <Mdx code={post.body.code}/>
+            <Mdx code={post.body.code} />
             <hr className="mt-12" />
             <div className="flex justify-center py-6 lg:py-10">
                 <Link href="/blog" className={cn(buttonVariants({ variant: "ghost" }))}>
