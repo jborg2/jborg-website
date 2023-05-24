@@ -1,3 +1,5 @@
+import ExternalLink from '@components/ExternalLink'
+
 export default function Contact() {
     return (
         <div className="container max-w-3xl py-6 lg:py-10">
@@ -14,7 +16,10 @@ export default function Contact() {
             <hr className="my-8 border-slate-200" />
             <div className="flex flex-col">
                 <p className="text-base text-slate-600 dark:text-slate-300">
-                    We are currently accepting new clients under our consulting firm, Everman - Haygood. Here are some examples of the problems we can help you solve:
+                    We are currently accepting new clients under our consulting firm, Everman - Haygood. You can reach us at{' '}
+                    <ExternalLink href='mailto:evermanhaygood@gmail.com'>
+                        evermanhaygood@gmail.com
+                    </ExternalLink>
                 </p>
             </div>
         </div>

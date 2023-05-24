@@ -150,7 +150,7 @@ export default function Showcase() {
                             "text-zinc-800 dark:text-zinc-200",
                             "mb-16",
                         )}>
-                            We build products that do stuff.
+                            We create, innovate, and iterate.
                         </h2>
                     </div>
                     <ShowcaseGrid />
