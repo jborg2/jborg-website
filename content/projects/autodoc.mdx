@@ -16,7 +16,7 @@ This is the first project that Jake and I (Ben) worked on together. We picked it
 
 ## How It Works
 
-AutoDoc works in 2 parts. First is the static analysis, second is the documentation generation via a Large Language Model. 
+AutoDoc works in 2 parts. First static analysis, second is the documentation generation via a Large Language Model. 
 The static analysis module creates a call graph of the code base. This call graph contains edges between methods that call each other. 
 For example, if method a calls methods b and c, the call graph contains the following edges: [[a, b], [a, c]]. Autodocs then uses 
 the LLM to summarise methods starting at the highest toplogical level of the call graph (leaf nodes). Once all called methods for a
