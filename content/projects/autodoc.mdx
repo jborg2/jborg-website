@@ -19,8 +19,8 @@ This is the first project that Jake and I (Ben) worked on together. We picked it
 AutoDoc works in 2 parts. The first is static analysis, and the second is documentation generation via a Large Language Model. 
 The static analysis module creates a call graph of the code base. This call graph contains edges between methods that call each other. 
 For example, if method a calls methods b and c, the call graph contains the following edges: [[a, b], [a, c]]. Autodocs then uses 
-the LLM to summarise methods starting at the highest topological level of the call graph (leaf nodes). Once all called methods for a
- method are summarised, the description of the called methods is injected as comments into the caller method before it is summarised. 
+the LLM to summarize methods starting at the highest topological level of the call graph (leaf nodes). Once all called methods for a
+ method are summarized, the description of the called methods is injected as comments into the caller method before it is summarized. 
  Finally, each file is summaries with its called method summaries injected as comments.
 
 
