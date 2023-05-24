@@ -63,7 +63,7 @@ export default function Hero() {
             )} />
             <Particles
                 className="absolute inset-0 -z-10 animate-fade-in"
-                quantity={200}
+                quantity={100}
             />
             <h1 className={cn(
                 "z-10",
