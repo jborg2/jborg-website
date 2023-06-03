@@ -14,6 +14,7 @@ export default function Layout({
 }) {
 
     const generatedProjectNavItems: SidebarNavItem[] = allProjects
+        .filter((project) => project.published)
         .filter((project) => project.slugAsParams).map((project) => {
 
             return {
