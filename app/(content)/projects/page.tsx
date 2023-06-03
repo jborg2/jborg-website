@@ -1,3 +1,5 @@
+import Showcase from "@/components/showcase";
+
 export default function Projects() {
     return (
         <div>

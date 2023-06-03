@@ -18,7 +18,8 @@ const generatedProjectNavItems = allProjects
             title: project.title,
             desc: project.desc,
             href: `/projects/${project.slugAsParams}`,
-            badges: project?.tags?.split(".")
+            badges: project?.tags?.split("."),
+            published: project.published
         }
     })
 
@@ -30,7 +31,8 @@ const generatedBlogNavItems = allPosts
             title: post.title,
             desc: post.desc,
             href: `/blog/${post.slugAsParams}`,
-            badges: post?.tags?.split(",")
+            badges: post?.tags?.split(","),
+            published: post.published
         }
     })
 
@@ -56,6 +58,7 @@ export const ShowcaseGrid = () => {
                     const orderB = sortOrder.indexOf(b.type);
                     return orderA - orderB;
                 })
+                .filter((item) => item.published !== false)
                 .map((item, i) => {
                     return (
                         <SmartLink key={i} href={item.href}>
@@ -105,9 +108,9 @@ export const ShowcaseGrid = () => {
                                                     return (
                                                         <Badge
                                                             key={i}
-                                                            color={i}
+                                                            color={i + 1}
                                                             textColor={0}
-                                                            className='w-max'
+                                                            className='w-max text-sm'
                                                         >
                                                             {badge}
                                                         </Badge>
@@ -143,14 +146,14 @@ export default function Showcase() {
                                 "text-blue-500",
                                 "mb-4",
                             )}>
-                            What is jborg2?
+                            What is GrokIt?
                         </h3>
                         <h2 className={cn(
                             "text-4xl font-bold text-center",
                             "text-zinc-800 dark:text-zinc-200",
-                            "mb-16",
+                            "mb-20 max-w-2xl",
                         )}>
-                            We create, innovate, and iterate.
+                            We craft intuitive solutions from complex technologies. 
                         </h2>
                     </div>
                     <ShowcaseGrid />

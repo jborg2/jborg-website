@@ -33,7 +33,7 @@ export default function Hero() {
             "max-h-screen",
             "from-white via-zinc-400/20 to-white",
             "dark:from-black dark:via-zinc-600/20 dark:to-neutral-900",
-            "gap-12"
+            "gap-4"
         )}>
             {/* <nav className="animate-fade-in p-4 rounded-lg hidden sm:flex">
                 <ul className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
@@ -77,12 +77,12 @@ export default function Hero() {
             )}
             >
                 {/* <span className='bg-gradient-to-tr from-red-800 via-blue-500 to-gray-500 bg-clip-text text-edge-outline'>jborg</span>{' '} */}
-                <span className='text-edge-outline'>jborg2</span>
+                <span className='text-edge-outline'>GrokIt</span>
             </h1>
             <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-            <div className="text-center animate-fade-in">
-                <h2 className="text-base text-zinc-500">
-                    jake + ben + organization + 2
+            <div className="text-center animate-fade-in px-8">
+                <h2 className="text-base sm:text-xl md:text-2xl text-zinc-700 dark:text-zinc-300 font-serif">
+                    <span className=''>grok /ɡräk/ verb</span> - to understand profoundly and intuitively.
                 </h2>
             </div>
         </div>

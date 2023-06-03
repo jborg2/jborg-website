@@ -8,7 +8,7 @@ export const badgeColors = [
     'bg-purple-100 dark:bg-purple-400',
     'bg-pink-100 dark:bg-pink-400',
     'bg-indigo-100 dark:bg-indigo-400',
-    'bg-gray-100 dark:bg-gray-400',
+    'bg-gray-100 dark:bg-gray-300',
 ]
 
 export const badgeTextColors = [
@@ -19,7 +19,7 @@ export const badgeTextColors = [
     'text-purple-600 dark:text-purple-700',
     'text-pink-600 dark:text-pink-700',
     'text-indigo-600 dark:text-indigo-700',
-    'text-gray-600 dark:text-gray-700',
+    'text-gray-600 dark:text-gray-800',
 ]
 
 export function Badge({ children, ...props }: any) {

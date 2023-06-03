@@ -34,10 +34,12 @@ export default async function RepoCard({ children, url }: { children: React.Reac
                     <h3 className='text-xl mb-2'>
                         <span className='font-semibold'>{repo["name"]}</span>
                     </h3>
-                    <p>
-                        {repo["description"]}
-                    </p>
                 </Link>
+                <p
+                    className='text-gray-700 dark:text-gray-300 text-sm mb-2'
+                >
+                    {repo["description"]}
+                </p>
                 <div className='flex flex-row gap-4 mt-2 items-center'>
                     <Badge color={7} className='flex flex-col items-center justify-center text-xs'>{repo['language']}</Badge>
                     <div
@@ -57,7 +59,7 @@ export default async function RepoCard({ children, url }: { children: React.Reac
                         </Link>
                     </div>
                     <p
-                        className='text-gray-500 text-xs italic' 
+                        className='text-gray-500 text-xs italic'
                     >  Last updated:{' '}
                         {formatDate(repo['updated_at'])}
                     </p>
