@@ -31,10 +31,10 @@ export default function MobileNavBar(props: any) {
 
     return (
         <nav
-            className='top-0 flex flex-row justify-between items-center bg-background dark:bg-background w-full z-50 h-16 bg-opacity-20 backdrop-blur-xl'
+            className='top-0 flex flex-row justify-between items-center w-full z-50 h-16'
         >
             <div
-                className='container p-4 flex flex-row justify-between items-center'
+                className='container p-4 flex flex-row justify-between items-center w-screen bg-transparent dark:bg-transparent'
             >
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
